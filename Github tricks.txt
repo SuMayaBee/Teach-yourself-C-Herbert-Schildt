@@ -1,0 +1,50 @@
+@Important Commads:
+
+# initialize:
+	>>git init
+# adding name and email:
+	>>git config --global user.name "your_name"
+	>>git config --global user.email "your_mail_address"
+# adding files (from Working Directory to Staging Area):
+	>>git add . or git add /--all
+	>>git add your_file_name(ex. fahad.txt)
+# adding files (from Staging Area to Local Repository):
+	>>git commit -m "your_message"
+
+@Creating SSH Key:
+
+STEP 1:
+>> ssh-keygen -t rsa -b 4096 -C "your_mail_address"
+then the will ask for a file name, let it be empty
+then they will ask for a passpharse(i.e. password), enter it
+then enter the password again
+>>eval $(ssh-agent -s)
+>>ssh-add ~/.ssh/id_rsa
+
+...completed creating ssh key.
+
+STEP 2:
+>> clip <  ~/.ssh/id_rsa 
+thus it will copy your ssh key. Then just simply log in github from brower. Go to settings and Search for "SSH and GPG Keys" named option. Click it and your will find two sections named SSH and GPG. Click on the Add new button of SSH section. Give an arbitrary title. then in key section press ctrl+v for pasting your ssh key. Lastly click on "Add SSH key". 
+
+....................................................................................DONE!!!
+
+@Uploading file/folder from my pc (local repository) to github( git repository):
+
+STEP 1:
+Open a repository in GitHub and dont click on Readme.
+
+STEP 2:
+open Git Bash on that folder from which you want to add files/folder.
+>> git add .
+>> git commit -m "your_message"
+for the first time when your git repository is empty type this one,
+>> git remote add origin [copy link form your git repository]
+but this command can easily be found on your git new repository where heading is (... or create a new repository..). You will just need copy the last 2 commands form that section of your newly created repository in Github.
+
+if you have added any folder/file in your repository then just type this one:
+>>git push -u origin master
+then if you are first time then they may ask you about your github user name and passphrase(i.e. password) given in time of creating ssh key.
+
+just refresh your browser and enjoy.
+.................DONE!!!
